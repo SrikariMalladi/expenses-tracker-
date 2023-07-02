@@ -1,0 +1,16 @@
+ALGORITHM:
+
+Step 1: Start
+Step 2: Declare two lists amount_spent=[], item_type=[] to store the
+amount spent and item category respectively.
+Step 3: To take the target amount, declare a variable called
+target_amount and take its input from the user.
+Step 4: Display the various categories of money spending using print
+statements.
+Step 5: To get the number of items purchased by their categories use
+another variable called number_items and enter the number.
+Step 6: Using a for loop we will take input from the user and store
+its values in a and b variables.
+Step 7: Using append() we will insert elements to the lists.
+Step 8: Calculate the total amount spent in the month using the
+sum().
