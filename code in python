@@ -1,0 +1,99 @@
+#a python library that helps to plot graphs
+
+import matplotlib.pyplot as plt
+
+#declaring two lists to store amount spent and its type category
+
+amount_spent=[]
+
+item_type=[]
+
+#a variable to store the user's monthly target amount
+
+target_amount=int(input("\n\t\t\tEnter your Monthly Target: "))
+
+#different categories for money spending
+
+print("Categories: \n1.Housing \n2.Transportation \n3.Food \n4.Utilities \n5.Insurance")
+
+print("6.Medical and Healthcare \n7.Personal Spending ")
+    
+print("\n8.Recreation and Entertainment \n9.Miscellaneous")
+
+#the user has to enter number of items purchased in the month
+
+number_items=int(input("\nEnter number of items purchased:  "))
+
+#a loop to add elements to the lists
+
+for i in range(number_items):
+    
+#we are a and b variable to get the input and store them in the list
+    
+    a=int(input("\nAmount Spent on the Item in rupees: "))
+    
+    b=input("\nCategory: ")
+    
+#to add elements we use append()
+    
+    amount_spent.append(a)
+    
+    item_type.append(b)   
+
+#to calculate the total we use sum()
+
+    total_spent=sum(amount_spent)
+    
+#to sort the list elements in ascending order
+    
+    amount_spent.sort()
+    
+    print("\nAmount Spent in an order: ",amount_spent)
+    
+    print("\nTotal Amount Spent is",total_spent,"₹")
+    
+#to track their spents these conditional statement are used
+
+if(total_spent==target_amount):
+    
+    print("\033[1;34m\n\t\t\tThis Month Target Amount Reached.\n")
+    
+    print("\033[1;34m\t\t\tWell Done! Continue keeping the Target.\n")
+    
+#\033[1;34m => used to change text to blue
+    
+elif(total_spent>target_amount):
+    
+    print("\033[1;31m\n\t\t\tThis Month Target Amount is Crossed\n")
+    
+    print("\033[1;31m\t\t\tPlease Refrain to unnecessary Expenses\n")
+    
+#\033[1;31m => used to change text to red
+    
+else:
+    
+    print("\033[1;32m\n\t\t\t\tThis Month Target Amount is Kept\n")
+    
+    print("\033[1;32m\t\t\tWell Done! Try to Keep up the track\n")
+    
+#\033[1;32m => used to change text to green
+
+#below lines are used to plot a graph
+
+plt.plot(amount_spent,item_type)
+
+#to label the x axis we use the xlabel keyword
+
+plt.xlabel('Amount Spent in Rupees')
+
+#to label the y axis we use the ylabel keyword
+
+plt.ylabel('Item Name')
+
+#to give a title to graph we use title keyowrd
+
+plt.title('Money Spent Tracker')
+
+#to customize the graph plots more we use plt.(any keyword)
+
+plt.show()
